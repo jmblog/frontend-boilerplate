@@ -1,0 +1,44 @@
+{
+  "name": "frontend-starter",
+  "version": "1.0.0",
+  "author": "Yoshihide Jimbo <yjimbo@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@jmblog/prettier-config": "jmblog/prettier-config",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.10",
+    "lint-staged": "^9.5.0",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "npm run clean && parcel src/index.html --open",
+    "type-check": "tsc --pretty",
+    "build": "npm run clean && parcel build src/index.html",
+    "lint": "eslint src --ext .ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
