@@ -1,6 +1,6 @@
 # frontend-boilerplate
 
-My minimum boilerplate for web front-end development
+My minimum boilerplate for a web front-end development
 
 - Yarn
 - TypeScript
@@ -11,7 +11,7 @@ My minimum boilerplate for web front-end development
 ## Getting Started
 
 ```bash
-$ git clone
+$ git clone git@github.com:jmblog/frontend-boilerplate.git --depth 1 myapp
 $ cd myapp
 $ git remote remove origin
 $ yarn install
